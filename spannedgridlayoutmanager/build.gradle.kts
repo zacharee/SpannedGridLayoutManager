@@ -1,39 +1,28 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
-    id("maven-publish")
+    alias(libs.plugins.maven.publish)
 }
 
 android {
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         namespace = "com.arasthel.spannedgridlayoutmanager"
         minSdk = 21
-        lint.targetSdk = 35
+        lint.targetSdk = 36
     }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
-
-    kotlinOptions {
-        jvmTarget = "21"
-    }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components.getByName("release"))
-
-                groupId = "tk.zwander.spannedgridlayoutmanager"
-                artifactId = "final"
-                version = "1.0"
-            }
-        }
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
     }
 }
 

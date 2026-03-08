@@ -1,10 +1,10 @@
 [versions]
-androidGradlePlugin = "8.8.0"
-androidMaven = "2.1"
-appcompat = "1.7.0"
-constraintlayout = "2.2.0"
-kotlin = "2.1.0"
+androidGradlePlugin = "9.1.0"
+appcompat = "1.7.1"
+constraintlayout = "2.2.1"
+kotlin = "2.3.10"
 recyclerview = "1.4.0"
+mavenPublish = "0.36.0"
 
 [libraries]
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -15,5 +15,5 @@ kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
-android-maven = { id = "com.github.dcendents.android-maven", version.ref = "androidMaven" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
+

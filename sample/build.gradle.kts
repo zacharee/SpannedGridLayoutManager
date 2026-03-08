@@ -1,16 +1,17 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
 }
 
 android {
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         namespace = "com.arasthel.spannedgridlayoutmanager.sample"
         applicationId = "com.arasthel.spannedgridlayoutmanager.sample"
         minSdk = 21
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
     }
@@ -20,12 +21,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
 
-    kotlinOptions {
-        jvmTarget = "21"
-    }
-
     packaging {
         resources.excludes.add("META-INF/library_release.kotlin_module")
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
     }
 }
 
