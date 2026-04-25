@@ -610,6 +610,7 @@ open class SpannedGridLayoutManager(
             addView(view, 0)
         }
 
+        measureChild(position, view)
         layoutChild(position, view)
 
         return view
@@ -617,7 +618,6 @@ open class SpannedGridLayoutManager(
 
     protected open fun makeView(position: Int, direction: Direction, recycler: RecyclerView.Recycler): View {
         val view = recycler.getViewForPosition(position)
-        measureChild(position, view)
 
         return view
     }
