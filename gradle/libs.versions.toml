@@ -1,8 +1,8 @@
 [versions]
-androidGradlePlugin = "9.1.0"
+androidGradlePlugin = "9.2.0"
 appcompat = "1.7.1"
 constraintlayout = "2.2.1"
-kotlin = "2.3.10"
+kotlin = "2.3.21"
 recyclerview = "1.4.0"
 mavenPublish = "0.36.0"
 
