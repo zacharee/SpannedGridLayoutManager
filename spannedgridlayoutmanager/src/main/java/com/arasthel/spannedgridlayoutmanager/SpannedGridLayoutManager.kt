@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import java.util.TreeMap
 import kotlin.math.ceil
+import kotlin.math.floor
 import kotlin.math.roundToInt
 
 /**
@@ -895,7 +896,7 @@ open class SpannedGridLayoutManager(
      * @param recycler Recycler
      */
     protected open fun fillBefore(recycler: RecyclerView.Recycler) {
-        val currentRow = ((scroll - getPaddingStartForOrientation()) / getItemSizeForOrientation()).roundToInt()
+        val currentRow = floor((scroll - getPaddingStartForOrientation()) / getItemSizeForOrientation()).roundToInt()
         val lastRow = ((scroll + size - getPaddingStartForOrientation()) / getItemSizeForOrientation()).roundToInt()
 
         for (row in (currentRow until lastRow).reversed()) {
